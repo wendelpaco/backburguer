@@ -1,0 +1,56 @@
+<%=
+weights = {
+  'Thin' => 100,
+  'ExtraLight' => 200,
+  'Light' => 300,
+  'Normal' => 400,
+  'Medium' => 500,
+  'SemiBold' => 600,
+  'Bold' => 700,
+  'ExtraBold' => 800,
+  'Black' => 900
+};
+
+fonts = [];
+
+Dir["#{Rails.root}/app/assets/fonts/**"].each do |folder|
+  next if folder.include?(".otf")
+  family = folder.split('/').last.split('-').first;
+  styling = folder.split('/').last.split('-')[1];
+  str =
+"@font-face {
+font-family: '#{family}';
+src: "
+  {
+    # 'woff2' => 'woff2',
+    'woff' => 'woff',
+    'ttf' => 'truetype'
+  }.each do |k, v|
+    file = Dir["#{folder}/*.#{k}"].first.split('/').last(2).join('/')
+    str = str + "url(font-path('#{file}')) format('#{v}'), "
+  end
+
+  str = str[0..-3] + ";\n"
+  unless styling.blank?
+    if styling.include? 'Italic'
+      str += "font-style: italic;\n"
+      styling = styling.gsub('Italic', '')
+    end
+
+    unless styling.blank?
+      weight = weights[styling]
+      if weight.present?
+        str += "font-weight: #{weight};"
+      end
+    end
+  end
+  str += "}"
+  
+  fonts.push str;
+end;
+
+fonts.join("\n")
+%>
+
+$din-pro: 'DINPro', sans-serif;
+// $eames-century-modern: 'EamesCenturyModern', serif;

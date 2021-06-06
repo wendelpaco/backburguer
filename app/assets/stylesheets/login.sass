@@ -1,0 +1,64 @@
+html,body
+  height: 100%
+
+#login
+  margin: 10px
+  background-image: url('https://cdn.pixabay.com/photo/2017/08/07/11/14/restaurant-2602736_960_720.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.6rem
+
+main
+  display: flow-root
+  align-items: center
+  padding-top: 40px
+  padding-bottom: 40px
+  background-color: #f5f5f5
+  
+.card-theme
+  background-color: $background-card-white
+  position: relative
+  display: flex
+  flex-direction: column
+  min-width: 0
+  word-wrap: break-word
+  background-clip: border-box
+  border: 1px solid #dadce0
+  border-radius: 0.6rem
+  &:hover
+    transition: all .35s ease-in-out
+    z-index: 1
+    box-shadow: 0 .75rem 1.5rem rgba(71,78,94,.4)!important
+    transform: scale(1.07)
+
+.form-signin, .card-theme
+  top: 100px
+  width: 100%
+  max-width: 330px
+  margin: auto
+  .checkbox
+    font-weight: 400
+  .form-floating
+    &:focus-within
+      z-index: 2
+  input[type="email"]
+    margin-bottom: -1px
+    border-bottom-right-radius: 0
+    border-bottom-left-radius: 0
+  input[type="password"]
+    margin-bottom: 10px
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+
+.blog-footer 
+  padding: 2.5rem 0 
+  color: #999 
+  text-align: center 
+  background-color: #f9f9f9 
+  border-top: .05rem solid #e5e5e5 
+  p 
+    &:last-child 
+      margin-bottom: 0 
+
+

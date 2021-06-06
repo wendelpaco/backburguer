@@ -17,8 +17,14 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   head
 
-  body.bg-light
-    .container
-      = render 'shared/header'
-      = yield
-      = render 'shared/footer'
+  body.theme
+    = render 'shared/header'
+    - unless params[:controller] == 'devise/sessions'
+      .container
+        = yield
+        = render 'shared/footer'
+    - else
+      #login
+        = yield
+        = render 'shared/footer'
+      

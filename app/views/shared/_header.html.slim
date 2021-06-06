@@ -1,1 +1,24 @@
-h1 Header
+header.d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-md-between.py-3.mb-4.border-bottom
+  a.d-flex.align-items-center.col-md-3.mb-2.mb-md-0.text-dark.text-decoration-none href="/" 
+    svg.bi.me-2 aria-label="Bootstrap" height="32" role="img" width="40" 
+      use xlink:href="#bootstrap" 
+  ul.nav.col-12.col-md-auto.mb-2.justify-content-center.mb-md-0
+    li
+      = link_to  "Home", root_path, class: 'nav-link px-2 link-secondary' 
+    li
+      = link_to  "Features", root_path, class: 'nav-link px-2 link-secondary' 
+    li
+      = link_to  "Pricing", root_path, class: 'nav-link px-2 link-secondary' 
+    li
+      = link_to  "FAQs", root_path, class: 'nav-link px-2 link-secondary' 
+    li
+      = link_to  "About", root_path, class: 'nav-link px-2 link-secondary' 
+    - if user_signed_in? && current_user.type_of_access == "admin"
+      li
+        = link_to  "Perfil", root_path, class: 'nav-link px-2 link-secondary'
+  .col-md-3.text-end
+    - unless user_signed_in?
+      = link_to 'Login', new_user_session_path, class: 'btn btn-outline-secondary btn-sm me-3', type: 'button'
+      = link_to 'Sign-up', new_user_registration_path, class: 'btn btn-secondary btn-sm me-3', type: 'button'
+    - else
+      = link_to 'Sair', destroy_user_session_path, method: :delete, class: 'btn btn-outline-secondary btn-sm me-3', type: 'button'

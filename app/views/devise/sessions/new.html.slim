@@ -1,14 +1,22 @@
-h2 Log in
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .form-inputs
-    = f.input :email,                       
-      required: false,                      
-      autofocus: true,                      
-      input_html: { autocomplete: "email" } 
-    = f.input :password,                               
-      required: false,                                 
-      input_html: { autocomplete: "current-password" } 
-    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-  .form-actions
-    = f.button :submit, "Log in"
-= render "devise/shared/links"
+main.form-signin.text-center.card-theme
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name), class: 'theme-card') do |f|
+    img.mb-4 alt="" width="120" height="110" src="https://img.freepik.com/vetores-gratis/ilustracao-vetorial-de-hamburguer-ilustracao-de-elemento-simples-rei-hamburguer-com-vetor-de-logotipo-da-coroa_101969-3.jpg?size=626&ext=jpg"
+    h1.h3.mb-3.fw-normal Faça seu Login
+    .form-floating
+      = f.input_field :email, class: 'form-control', required: true, label: 'Endereço de E-email'
+      label for="floatingInput"  Endereço de E-email
+    .form-floating
+      = f.input_field :password, class: 'form-control', required: true, label: 'Endereço de E-email'
+      br
+      label for="floatingInput"  Senha
+    .checkbox.mb-3
+      label
+        = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+    = f.submit "Entrar", id: "signIn", class: "w-100 btn btn-lg btn-primary"
+
+  / = render "devise/shared/links"
+
+javascript:
+  $("#signIn").on('click',()=> {
+    console.log($('#user_email').val())
+  })
