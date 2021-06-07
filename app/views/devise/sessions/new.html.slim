@@ -1,6 +1,6 @@
 main.form-signin.text-center.card-theme
   = simple_form_for(resource, as: resource_name, url: session_path(resource_name), class: 'theme-card') do |f|
-    img.mb-4 alt="" width="120" height="110" src="https://img.freepik.com/vetores-gratis/ilustracao-vetorial-de-hamburguer-ilustracao-de-elemento-simples-rei-hamburguer-com-vetor-de-logotipo-da-coroa_101969-3.jpg?size=626&ext=jpg"
+    = image_tag "/assets/logo-login.jpg", alt: 'Logo Login', width: '120', height: '110' 
     h1.h3.mb-3.fw-normal Faça seu Login
     .form-floating
       = f.input_field :email, class: 'form-control', required: true, label: 'Endereço de E-email'
@@ -12,7 +12,7 @@ main.form-signin.text-center.card-theme
     .checkbox.mb-3
       label
         = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-    = f.submit "Entrar", id: "signIn", class: "w-100 btn btn-lg btn-primary"
+    = f.submit "Entrar", id: "signIn", class: "w-100 btn btn-lg btn-dark"
 
   / = render "devise/shared/links"
 

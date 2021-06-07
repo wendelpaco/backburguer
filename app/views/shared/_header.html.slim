@@ -1,24 +1,49 @@
-header.d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-md-between.py-3.mb-4.border-bottom
-  a.d-flex.align-items-center.col-md-3.mb-2.mb-md-0.text-dark.text-decoration-none href="/" 
-    svg.bi.me-2 aria-label="Bootstrap" height="32" role="img" width="40" 
-      use xlink:href="#bootstrap" 
-  ul.nav.col-12.col-md-auto.mb-2.justify-content-center.mb-md-0
-    li
-      = link_to  "Home", root_path, class: 'nav-link px-2 link-secondary' 
-    li
-      = link_to  "Features", root_path, class: 'nav-link px-2 link-secondary' 
-    li
-      = link_to  "Pricing", root_path, class: 'nav-link px-2 link-secondary' 
-    li
-      = link_to  "FAQs", root_path, class: 'nav-link px-2 link-secondary' 
-    li
-      = link_to  "About", root_path, class: 'nav-link px-2 link-secondary' 
-    - if user_signed_in? && current_user.type_of_access == "admin"
-      li
-        = link_to  "Perfil", root_path, class: 'nav-link px-2 link-secondary'
-  .col-md-3.text-end
-    - unless user_signed_in?
-      = link_to 'Login', new_user_session_path, class: 'btn btn-outline-secondary btn-sm me-3', type: 'button'
-      = link_to 'Sign-up', new_user_registration_path, class: 'btn btn-secondary btn-sm me-3', type: 'button'
-    - else
-      = link_to 'Sair', destroy_user_session_path, method: :delete, class: 'btn btn-outline-secondary btn-sm me-3', type: 'button'
+header.p-3.mb-3
+  .container
+    .d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
+      a.d-flex.align-items-center.mb-2.mb-lg-0.text-dark.text-decoration-none href="/" 
+        = image_tag "/assets/logo.png", alt: 'Logo', width: '80', height: '80' 
+      ul.nav.col-12.col-lg-auto.me-lg-auto.mb-2.justify-content-center.mb-md-0
+        li
+          = link_to  "Overview", root_path, class: 'nav-link px-2 link-secondary'
+        li
+          = link_to  "Inventory", root_path, class: 'nav-link px-2 link-dark'
+        li
+          = link_to  "Customers", root_path, class: 'nav-link px-2 link-dark'
+        - if user_signed_in? && current_user.type_of_access == "admin"
+        li
+          = link_to  "administração", class: 'nav-link px-2 link-dark' do
+
+      .social
+        span.facebook title="Facebook"
+          = link_to  "http://facebook.com", class: 'nav-link px-2 link-dark' do
+            = fa_icon "facebook"
+        span.instagram title="Instagram"
+          = link_to  "http://instagram.com", class: 'nav-link px-2 link-dark' do
+            = fa_icon "instagram"
+            
+      form.col-12.col-lg-auto.mb-3.mb-lg-0.me-lg-3
+        input.form-control aria-label="Search" placeholder="Search..." type="search" 
+      - unless user_signed_in?
+        - unless params[:controller] == 'devise/sessions'
+          = link_to 'Login', new_user_session_path, class: 'btn btn-dark btn-sm', type: 'button'
+        / = link_to 'Sign-up', new_user_registration_path, class: 'btn btn-secondary btn-sm me-3', type: 'button'
+      - else
+        .dropdown.text-end
+          a#dropdownUser1.d-block.link-dark.text-decoration-none.dropdown-toggle aria-expanded="false" data-bs-toggle="dropdown" href="#" 
+            img.rounded-circle alt="mdo" height="32" src="https://avatars.githubusercontent.com/u/17410831?v=4" width="32" 
+          ul.dropdown-menu.text-small aria-labelledby="dropdownUser1" 
+            li
+              = link_to edit_user_registration_path, class: 'dropdown-item' do
+                span Seja Bem Vindo
+                strong #{current_user.full_name} 
+            li
+              .dropdown-divider
+            li
+              = link_to  "Settings", edit_user_registration_path, class: 'dropdown-item'
+            li
+              = link_to  "Profile", edit_user_registration_path, class: 'dropdown-item'
+            li
+              .dropdown-divider
+            li
+              = link_to 'Sair', destroy_user_session_path, method: :delete, class: 'dropdown-item', type: 'button' 
