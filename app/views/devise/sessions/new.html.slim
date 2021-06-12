@@ -1,22 +1,27 @@
-main.form-signin.text-center.card-theme
-  = simple_form_for(resource, as: resource_name, url: session_path(resource_name), class: 'theme-card') do |f|
-    = image_tag "/assets/logo-login.jpg", alt: 'Logo Login', width: '120', height: '110' 
-    h1.h3.mb-3.fw-normal Faça seu Login
-    .form-floating
-      = f.input_field :email, class: 'form-control', required: true, label: 'Endereço de E-email'
-      label for="floatingInput"  Endereço de E-email
-    .form-floating
-      = f.input_field :password, class: 'form-control', required: true, label: 'Endereço de E-email'
-      br
-      label for="floatingInput"  Senha
-    .checkbox.mb-3
-      label
-        = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-    = f.submit "Entrar", id: "signIn", class: "w-100 btn btn-lg btn-dark"
+.container.py-3
+  .row.text-center
+    .col-12 
+      .menu_logo__login.mt-5.mb-5
+            p 🔥
+            p 🍔
+            p 🍺
+            p 🍖
+            p 🛒
+            p 💳
+    .col-12
+      main.form-signin
+        = simple_form_for(resource, as: resource_name, url: session_path(resource_name), class: 'theme-card') do |f|
+          h1.h3.mb-5.fw-normal Faça seu Login
+          .form-floating
+            = f.input_field :email, class: 'form-control', required: true, label: 'Endereço de E-email'
+            label for="floatingInput"  Endereço de E-email
+          .form-floating
+            = f.input_field :password, class: 'form-control', required: true, label: 'Endereço de E-email'
+            br
+            label for="floatingInput"  Senha
+          .checkbox.mb-3
+            label
+              = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+          = f.submit "Entrar", id: "signIn", class: "w-100 btn btn-lg btn-dark"
 
   / = render "devise/shared/links"
-
-javascript:
-  $("#signIn").on('click',()=> {
-    console.log($('#user_email').val())
-  })

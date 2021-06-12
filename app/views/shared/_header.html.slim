@@ -7,11 +7,11 @@ header
       #navbarCollapse.collapse.navbar-collapse
         ul.navbar-nav.me-auto.mb-2.mb-md-0
           li.nav-item
-            a.nav-link.active aria-current="page" href="#"  Home
+            a.nav-link.active aria-current="page" href="#"  Menu
           li.nav-item
-            a.nav-link href="#"  Link
+            = link_to "Login", new_user_session_path, class: 'nav-link active', 'araia-current':"page"
           li.nav-item
-            a.nav-link.disabled aria-disabled="true" href="#" tabindex="-1"  Disabled
+            = link_to "sair", destroy_user_session_path, method: :delete, class: 'nav-link active', 'araia-current':"page"
         form.d-flex
           input.form-control.me-2 aria-label="Search" placeholder="Search" type="search" /
           button.btn.btn-outline-success type="submit"  Search
