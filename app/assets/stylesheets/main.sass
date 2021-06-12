@@ -1,37 +1,10 @@
-// HEADER
-@import "header"
-
-// LOGIN
-@import "login"
-
-
-.theme
-  background-color: $background-grey
-
-header
-  a
-    img
-      margin-right: 10px
-      &:hover
-        transition: all .45s ease-in-out
-        z-index: 1
-        box-shadow: 0 .75rem 1.5rem rgba(71,78,94,.4)!important
-        transform: scale(1.07)
-        border-radius: 50%
-
-.row
+.col-lg-4
   &:hover
-    transition: all .35s ease-in-out
-    z-index: 1
-    box-shadow: 0 .75rem 1.0rem rgba(71,78,94,.4)!important
-    transform: scale(1.02)
-  .col
-    background-color: #FFF
-.card
-  border: none
+    display: block
+    border: 1px solid currentColor
+    border-radius: 4px
 
-.text-center img
-  display: inline-block
-  vertical-align: top
-  height: 165px
-  width: 165px
+.col-md-5
+  img
+    border-radius: 1rem
+  

@@ -20,11 +20,10 @@ html
   body.theme
     = render 'shared/header'
     - unless params[:controller] == 'devise/sessions'
-      .container
-        = yield
-        = render 'shared/footer'
-    - else
-      #login
-        = yield
-        = render 'shared/footer'
+      = yield
+      = render 'shared/footer'
+    / - else
+    /   #login
+    /     = yield
+    /     = render 'shared/footer'
       

@@ -17,3 +17,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+// SHARED
+//= require vendor/holder.min
