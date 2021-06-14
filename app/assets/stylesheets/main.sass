@@ -1,3 +1,5 @@
+@import "login"
+  
 .col-lg-4
   &:hover
     display: block
@@ -8,7 +10,12 @@
   img
     border-radius: 1rem
 
-.menu_logo__login
+@media screen and (max-width: 600px) 
+  .box_menus__logo
+    font-size: 3rem !important 
+
+
+.box_menus__logo
   display: flex
   justify-content: center
   font-size: 80px

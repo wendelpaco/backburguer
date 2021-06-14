@@ -1,7 +1,7 @@
 .container.py-3
   .row.text-center
     .col-12 
-      .menu_logo__login.mt-5.mb-5
+      .box_menus__logo.mt-5.mb-5
             p 🔥
             p 🍔
             p 🍺
@@ -24,8 +24,8 @@
             br
             label for="floatingInput"  Confirmação da senha
           = f.submit "Entrar", id: "signIn", class: "w-100 btn btn-lg btn-dark"
-          small 
+          small.box_users__new_or_restore
             span Já tem uma conta?
-            = link_to new_user_password_path do
+            = link_to new_user_session_path do
               i.fa.fa-thumbs-up style="margin-left: .3rem; color:black;" aria-hidden="true"
-      = render "devise/shared/links"
+        / = render "devise/shared/links"
