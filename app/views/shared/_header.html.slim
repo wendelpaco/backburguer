@@ -1,19 +1,39 @@
-header
-  nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
-    .container-fluid
-      = link_to 'Carousel', root_path, class: 'navbar-brand'
-      button.navbar-toggler aria-controls="navbarCollapse" aria-expanded="false" aria-label=("Toggle navigation") data-bs-target="#navbarCollapse" data-bs-toggle="collapse" type="button" 
-        span.navbar-toggler-icon
-      #navbarCollapse.collapse.navbar-collapse
-        ul.navbar-nav.me-auto.mb-2.mb-md-0
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  .container.px-4.px-lg-5
+    = link_to '@seuburger.rj', root_path, class: 'navbar-brand'
+    button.navbar-toggler.collapsed aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" 
+      span.navbar-toggler-icon
+    #navbarSupportedContent.navbar-collapse.collapse style="" 
+      ul.navbar-nav.me-auto.mb-2.mb-lg-0.ms-lg-4
+        li.nav-item
+          a.nav-link.active aria-current="page" href="#!"  Menu
+        - unless user_signed_in?  
+          = link_to "Login", new_user_session_path, class: 'nav-link active', 'araia-current':"page"
+        - else
           li.nav-item
-            a.nav-link.active aria-current="page" href="#"  Menu
-          li.nav-item
-          - unless user_signed_in?  
-            = link_to "Login", new_user_session_path, class: 'nav-link active', 'araia-current':"page"
-          - else
-            li.nav-item
-              = link_to "Sair", destroy_user_session_path, method: :delete, class: 'nav-link active', 'araia-current':"page"
-        form.d-flex
-          input.form-control.me-2 aria-label="Search" placeholder="Search" type="search" /
-          button.btn.btn-outline-success type="submit"  Search
+            = link_to "Sair", destroy_user_session_path, method: :delete, class: 'nav-link active', 'araia-current':"page"
+        li.nav-item.dropdown
+          a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" data-bs-toggle="dropdown" href="#" role="button"  Shop
+          ul.dropdown-menu aria-labelledby="navbarDropdown" 
+            li
+              a.dropdown-item href="#!"  All Products
+            li
+              hr.dropdown-divider
+            li
+              a.dropdown-item href="#!"  Popular Items
+            li
+              a.dropdown-item href="#!"  New Arrivals
+      form.d-flex
+        .box_navbar__social
+          span.facebook title="Facebook"
+            = link_to "https://www.facebook.com/seuburger.rj/", style: "color: black;" do 
+              i.fa.fa-facebook-f
+          span.instagram title="Instagram"
+            = link_to "https://www.instagram.com/seuburger.rj/", style: "color: black;" do 
+              i.fa.fa-instagram
+        .box_navbar__search
+          input.form-control aria-label="Search" placeholder="Search" type="search"
+        button.btn.btn-outline-dark.btn-sm type="submit" 
+          i.bi-cart-fill.me-1
+          | Cart
+          span.badge.bg-dark.text-white.ms-1.rounded-pill 0
