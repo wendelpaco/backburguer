@@ -17,7 +17,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   head
 
-  body.theme
+  body
     - unless params[:controller] != 'home'
       = render 'shared/header'
     = yield
