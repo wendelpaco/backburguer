@@ -8,7 +8,7 @@ html
       / SEO @seuburger.rj
     /###################/
     = render  "analytics/seo"
-    = favicon_link_tag 'favicon.ico'
+    = favicon_link_tag asset_path 'favicon.ico'
     title = "@seuburger.rj"
     = csrf_meta_tags
     = csp_meta_tag
@@ -18,6 +18,6 @@ html
   head
 
   body.theme
-    - unless params[:controller] == 'devise/sessions'
+    - unless params[:controller] != 'home'
       = render 'shared/header'
     = yield

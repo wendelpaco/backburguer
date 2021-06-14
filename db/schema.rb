@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_06_05_223028) do
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
     t.string "email", default: "", null: false
+    t.string "cpf", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.integer "status", default: 0, null: false
     t.integer "type_of_access", default: 2, null: false

@@ -23,5 +23,10 @@
             label
               = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
           = f.submit "Entrar", id: "signIn", class: "w-100 btn btn-lg btn-dark"
+          small 
+            span Não tem uma conta ainda?
+            = link_to new_user_registration_path do
+              i.fa.fa-plus-square style="margin-left: .3rem; color:black;" aria-hidden="true" 
 
+              
   / = render "devise/shared/links"
