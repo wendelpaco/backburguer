@@ -1,0 +1,17 @@
+en:
+  page_user:
+    title_page_sign_in: Make your login
+    title_page_sign_up: Make your registration
+    title_page_not_remember: Forgot your password?
+    form:
+      email: Email address
+      password: Password
+      password_confirmation: Password Confirmation
+      button_register: Register
+      already_have_an_account: Already have an account?
+      button_login: Login
+      remember_me: Remember me
+      not_account: Do not have an account yet?
+      forgot_your_password: Forgot your password?
+      button_send_new_password: Send
+      come_back: Back to login

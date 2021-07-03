@@ -1,0 +1,5 @@
+en:
+  views:
+    users:
+      show:
+        forgot_your_password: Forgot your password?

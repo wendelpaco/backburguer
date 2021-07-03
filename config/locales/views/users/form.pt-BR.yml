@@ -1,0 +1,17 @@
+pt-BR:
+  page_user:
+    title_page_sign_in: Faça seu Login
+    title_page_sign_up: Faça seu Cadastro
+    title_page_not_remember: Esqueceu sua senha?
+    form:
+      email: Endereço de E-mail
+      password: Senha
+      password_confirmation: Confirmação de senha
+      button_register: Cadastrar
+      already_have_an_account: Já tem uma conta?
+      button_login: Entrar
+      remember_me: Lembrar
+      not_account: Não tem uma conta ainda?
+      forgot_your_password: Esqueceu sua senha?
+      button_send_new_password: Enviar
+      come_back: Voltar para o login

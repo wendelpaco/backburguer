@@ -48,6 +48,8 @@ gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'ransack'
 gem 'select2-rails'
+gem 'sweetalert2'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -12,10 +12,13 @@
       main.form-signin
         = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
           = f.error_notification
-          h1.h3.mb-5.fw-normal Esqueceu sua senha?
+          h1.h3.mb-5.fw-normal = t('page_user.title_page_not_remember')
           .form-floating
-            = f.input_field :email, class: 'form-control', required: true, label: 'Endereço de E-email'
-            label for="floatingInput"  Endereço de E-email
+            = f.input_field :email, class: 'form-control', required: true, label: t('page_user.form.email')
+            label for="floatingInput" = t('page_user.form.email')
             br
-          = f.submit "Enviar", id: "signIn", class: "w-100 btn btn-lg btn-dark"
-      / = render "devise/shared/links"
+          = f.submit t('page_user.form.button_send_new_password'), id: "signIn", class: "w-100 btn btn-lg btn-dark"
+          small.box_users__restore
+            span = t('page_user.form.come_back')
+            = link_to new_user_session_path do
+              i.fa.fa-sign-in style="margin-left: .3rem; color:black;" aria-hidden="true"

@@ -1,8 +1,13 @@
-/ footer.blog-footer
-/   p
-/     | Blog template built for
-/     a href="https://getbootstrap.com/"  Bootstrap
-/     | by
-/     a href="https://twitter.com/mdo"  @mdo
-/   p
-/     a href="#"  Back to top
+footer.container
+  p.float-end
+    = link_to "#" do
+      i.fa.fa-angle-double-up style="font-size: 2rem"
+  .between.text-center
+    br
+    | |
+    a href="#" Quem somos?
+    | |
+    a href="#" Privacidade
+    | |
+  p.text-center
+    | © 2017–2021 @seuburger.rj - 12.176.617/0001-41

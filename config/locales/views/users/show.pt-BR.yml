@@ -1,0 +1,5 @@
+pt-BR:
+  views:
+    users:
+      show:
+        forgot_your_password: Esqueceu sua senha?

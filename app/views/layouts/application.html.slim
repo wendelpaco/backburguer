@@ -21,3 +21,12 @@ html
     - unless params[:controller] != 'home'
       = render 'shared/header'
     = yield
+
+    - flash.each do |name, msg|
+      - unless name != 'notice'
+        - icon = name = 'error'
+      - else
+        - icon = name = 'success'
+      javascript:
+        Swal.fire( {type: "#{icon}",title: "#{msg}"} )
+
